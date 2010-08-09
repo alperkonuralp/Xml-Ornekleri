@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            //$.get('http://www.tcmb.gov.tr/kurlar/today.xml', {}, function(xml) {
+            $.get('kurlar.xml', function(zxc) {
+                var y = $('Tarih_Date Currency', zxc);
+                //var y = $(zxc).find('Tarih_Date Currency');
+
+                y.each(function(i, item) {
+                    if ($(item).children().length != 3) {
+                        $('<tr/>')
+                            .append('<td>' + $(item).attr('Kod') + '</td>')
+                            .append('<td>' + $(item).children('Unit').text() + '</td>')
+                            //.append('<td>' + $('Unit', item).text() + '</td>')
+                            .append('<td>' + $('Isim', item).text() + ' (' + $('CurrencyName', item).text() + ')' + '</td>')
+                            .append('<td>' + $('ForexBuying', item).text() + '</td>')
+                            .append('<td>' + $('ForexSelling', item).text() + '</td>')
+                            .appendTo('#tCurrencies');
+                    }
+                });
+            }, 'xml');
+
+        });
+    </script>
+
+</head>
+<body>
+    <table id="tCurrencies" border="1">
+        <thead>
+            <tr>
+                <th>
+                    Döviz Kodu
+                </th>
+                <th>
+                    Birim
+                </th>
+                <th>
+                    Döviz Adı
+                </th>
+                <th>
+                    Döviz Alış
+                </th>
+                <th>
+                    Döviz Satış
+                </th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

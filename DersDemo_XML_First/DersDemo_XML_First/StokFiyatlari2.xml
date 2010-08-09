@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Fiyatlar>
+    <Fiyat Barkod="1125456321">
+        <Ad>Kablusuz Mouse</Ad>
+        <Fiyat>14.99</Fiyat>
+        <StokMiktari/>
+    </Fiyat>
+    <Fiyat Barkod="123134455">
+        <Ad>Kablosuz Klavye</Ad>
+        <Fiyat>24.99</Fiyat>
+    </Fiyat>
+    <Fiyat Barkod="5564785124">
+        <Ad>Harici Disk 500gb</Ad>
+        <Fiyat>150.00</Fiyat>
+    </Fiyat>
+    <Fiyat Barkod="4548744579">
+        <Ad>Web Cam</Ad>
+        <Fiyat>15.99</Fiyat>
+    </Fiyat>
+    <Fiyat Barkod="3978145214">
+        <Ad>CD Kalemi</Ad>
+        <Fiyat>1.99</Fiyat>
+    </Fiyat>
+</Fiyatlar>

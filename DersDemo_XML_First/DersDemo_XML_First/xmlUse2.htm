@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="jquery-1.4.2.min.js" type="text/javascript"></script>
+
+    <script src="jquery.xmldom.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            var xml = '<?xml version="1.0" encoding="utf-8" ?><Fiyatlar><Fiyat Barkod="1125456321"> <Ad>Kablusuz Mouse</Ad><Fiyat>14.99</Fiyat><StokMiktari/></Fiyat><Fiyat Barkod="123134455"><Ad>Kablosuz Klavye</Ad><Fiyat>24.99</Fiyat></Fiyat><Fiyat Barkod="5564785124"><Ad>Harici Disk 500gb</Ad><Fiyat>150.00</Fiyat></Fiyat><Fiyat Barkod="4548744579"><Ad>Web Cam</Ad><Fiyat>15.99</Fiyat></Fiyat><Fiyat Barkod="3978145214"><Ad>CD Kalemi</Ad><Fiyat>1.99</Fiyat></Fiyat></Fiyatlar>';
+            var x = $.xmlDOM(xml);
+
+            //$(x).find('Fiyatlar Fiyat');
+            var toplam = 0;
+            $('Fiyatlar > Fiyat', x).each(function(i, item) {
+                var item = $(item);
+                $('<tr/>')
+                    .addClass(i % 2 == 1 ? 'alternate' : '')
+                    .append('<td>' + item.attr('Barkod') + '</td>')
+                    .append('<td>' + item.children('Ad').text() + '</td>')
+                    .append('<td align=right>' + item.children('Fiyat').text() + '</td>')
+                    .appendTo('#tFiyatlar');
+                toplam += parseFloat(item.children('Fiyat').text());
+            });
+
+            $('<tr/>')
+                .append('<td colspan=2 align=right>Toplam : </td>')
+                .append('<td align=right>' + toplam + '</td>')
+                .appendTo('#tFiyatlar');
+        });
+    </script>
+
+    <style type="text/css">
+        #tFiyatlar
+        {
+            font: 11pt Tahoma, Verdana;
+        }
+        #tFiyatlar thead tr
+        {
+            background: blue;
+            color: White;
+        }
+        #tFiyatlar tbody tr:hover, #tFiyatlar tbody tr:hover td
+        {
+            background: blue;
+            color: White;
+        }
+        #tFiyatlar tbody tr.alternate
+        {
+            background: #eeeeee;
+        }
+        #tFiyatlar td, #tFiyatlar th
+        {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table id="tFiyatlar" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th>
+                    Barkod
+                </th>
+                <th>
+                    Stok Adı
+                </th>
+                <th>
+                    Stok Fiyatı
+                </th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

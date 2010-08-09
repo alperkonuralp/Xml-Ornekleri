@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Fiyatlar>
+    <Fiyat>
+        <Barkod>
+            <GrupKodu>1125</GrupKodu>
+            <StokKodu>4563</StokKodu>
+            <KontrolKodu>21</KontrolKodu>
+        </Barkod>
+        <Ad>Kablusuz Mouse</Ad>
+        <Fiyat>14.99</Fiyat>
+        <StokMiktari></StokMiktari>
+    </Fiyat>
+    <Fiyat>
+        <Barkod>123134455</Barkod>
+        <Ad>Kablosuz Klavye</Ad>
+        <Fiyat>24.99</Fiyat>
+    </Fiyat>
+    <Fiyat>
+        <Barkod>5564785124</Barkod>
+        <Ad>Harici Disk 500gb</Ad>
+        <Fiyat>150.00</Fiyat>
+    </Fiyat>
+    <Fiyat>
+        <Barkod>4548744579</Barkod>
+        <Ad>Web Cam</Ad>
+        <Fiyat>15.99</Fiyat>
+    </Fiyat>
+    <Fiyat>
+        <Barkod>3978145214</Barkod>
+        <Ad>CD Kalemi</Ad>
+        <Fiyat>1.99</Fiyat>
+    </Fiyat>
+</Fiyatlar>
